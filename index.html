@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[NOM DE L'ENTREPRISE] — Site en construction</title>
+<meta name="description" content="[NOM DE L'ENTREPRISE] — exploitation minière et transport de minerai. Notre nouveau site arrive bientôt.">
+<meta property="og:title" content="[NOM DE L'ENTREPRISE]">
+<meta property="og:description" content="Nos engins sont déjà au travail. Notre nouveau site arrive bientôt.">
+<meta name="theme-color" content="#1C1A19">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='8' fill='%231C1A19'/%3E%3Cpath d='M6 28 L14 11 L20 20 L24 15 L30 28 Z' fill='none' stroke='%23F2B705' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#1C1A19;color:#F5EFE6;font-family:Inter,system-ui,sans-serif}
+a{color:#F2B705}a:hover{color:#FFD24D}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px}
+header.wrap{padding-top:22px;padding-bottom:22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:.02em}
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1.5px solid #F2B705;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none}
+.hero{position:relative;width:100%;height:min(780px,88vh);min-height:560px;overflow:hidden;background:linear-gradient(#86A9C9,#F2C49A 55%,#A9532E 56%,#5E3020)}
+#mine3d{position:absolute;inset:0;width:100%;height:100%;display:block}
+.overlay{position:absolute;top:0;left:0;right:0;padding-top:28px;pointer-events:none}
+.card{pointer-events:auto;max-width:540px;padding:28px;background:rgba(22,20,19,.8);border-radius:14px;display:flex;flex-direction:column;gap:16px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.tag{margin:0;display:inline-flex;align-self:flex-start;align-items:center;gap:10px;padding:7px 12px;background:#2A2624;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#F2B705}
+h1{margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(32px,5vw,60px);line-height:1.03;letter-spacing:-.02em}
+.lead{margin:0;font-size:17px;line-height:1.55;color:#D6CDC1}
+.controls{position:absolute;left:0;right:0;bottom:20px;display:flex;flex-wrap:wrap;gap:10px}
+.camBtn{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(245,239,230,.45);background:rgba(22,20,19,.8);color:#F5EFE6;font:600 15px Inter,system-ui,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.camBtn:hover{border-color:#F2B705}
+.camBtn[aria-pressed="true"]{background:#F2B705;border-color:#F2B705;color:#1C1A19}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.beacon{animation:blink 1s steps(2) infinite}
+footer{background:#2A2624;border-top:4px solid #F2B705}
+footer .wrap{padding-top:36px;padding-bottom:36px;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start}
+footer h2{margin:0;font-family:'Space Grotesk',sans-serif;font-size:24px}
+.lbl{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#A89F94}
+.val{font-size:17px;font-weight:600}
+.copy{margin:0;padding:0 20px 24px;text-align:center;font-size:13px;color:#A89F94}
+@media (max-width:640px){.card{padding:20px}.lead{font-size:16px}.overlay{padding-top:16px}header.wrap{padding-top:14px;padding-bottom:14px}.camBtn{padding:0 12px;font-size:14px;gap:6px}.controls{gap:8px;bottom:14px}}
+@media (prefers-reduced-motion:reduce){.beacon{animation:none}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="brand">
+    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><path d="M4 30 L14 10 L20 20 L24 14 L32 30 Z" fill="none" stroke="#F2B705" stroke-width="2.5" stroke-linejoin="round"/></svg>
+    <span>[NOM DE L'ENTREPRISE]</span>
+  </div>
+  <a class="pill" href="#contact">Nous contacter</a>
+</header>
+
+<main>
+  <section class="hero">
+    <canvas id="mine3d" role="img" aria-label="Mine à ciel ouvert en 3D : camions-bennes sur une piste en spirale, pelleteuse en chargement et concasseur"></canvas>
+    <div class="overlay"><div class="wrap">
+      <div class="card">
+        <p class="tag"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle class="beacon" cx="5" cy="5" r="5" fill="#F2B705"/></svg>Site en construction</p>
+        <h1>Nos engins sont déjà au travail.</h1>
+        <p class="lead">[Une phrase sur votre activité : extraction, transport de minerai, location d'engins…]. Notre nouveau site arrive bientôt.</p>
+      </div>
+    </div></div>
+    <div class="controls wrap" id="controls">
+      <button type="button" class="camBtn" data-cam="orbit" aria-pressed="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 12a9 4 0 0 0 18 0a9 4 0 0 0-18 0"/></svg>Vue d'ensemble</button>
+      <button type="button" class="camBtn" data-cam="follow" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16V8h11v8"/><path d="M13 11h5l4 3v2h-9"/><circle cx="6" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg>Suivre un camion</button>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <h2>Contact</h2>
+      <p style="margin:0;color:#CFC6BA">[VILLE, PAYS]</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px">
+      <div style="display:flex;flex-direction:column;gap:4px"><span class="lbl">E-mail</span><a class="val" href="mailto:contact@exemple.com">[EMAIL]</a></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span class="lbl">Téléphone</span><a class="val" href="tel:+000000000">[TÉLÉPHONE]</a></div>
+    </div>
+  </div>
+  <p class="copy">© <span id="year">2026</span> [NOM DE L'ENTREPRISE]</p>
+</footer>
+
+<script src="three.min.js" defer></script>
+<script defer>
+/* ===== Réglages ===== */
+var CONFIG = { accent: '#F2B705', trucks: 6 };
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Mode allégé : petits écrans, appareils modestes, ou ?lite dans l'URL */
+var LITE = /[?&]lite/.test(location.search) ||
+  window.innerWidth < 760 || (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
+if (/[?&]full/.test(location.search)) LITE = false;
+
+var SITE = {
+  props: { accent: CONFIG.accent, trucks: LITE ? Math.min(CONFIG.trucks, 4) : CONFIG.trucks, animated: true },
+  state: { cam: 'orbit' }, _alive: true, visible: true
+};
+
+var btns = document.querySelectorAll('[data-cam]');
+for (var b = 0; b < btns.length; b++) btns[b].addEventListener('click', function () {
+  SITE.state.cam = this.getAttribute('data-cam');
+  for (var j = 0; j < btns.length; j++) btns[j].setAttribute('aria-pressed', btns[j] === this ? 'true' : 'false');
+});
+
+function webglOK() {
+  try { var c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl'))); }
+  catch (e) { return false; }
+}
+
+function startMine(canvas) {
+    var self = SITE, T = window.THREE;
+    if (T.ColorManagement) T.ColorManagement.legacyMode = false;
+
+    var R = new T.WebGLRenderer({ canvas: canvas, antialias: !LITE, powerPreference: 'high-performance' });
+    self._renderer = R;
+    var PR = Math.min(window.devicePixelRatio || 1, LITE ? 1 : 1.75);
+    R.setPixelRatio(PR);
+    R.shadowMap.enabled = !LITE;
+    R.shadowMap.type = T.PCFSoftShadowMap;
+    R.outputEncoding = T.sRGBEncoding;
+    R.toneMapping = T.ACESFilmicToneMapping;
+    R.toneMappingExposure = 1.1;
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var seed = 7;
+    function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+
+    var scene = new T.Scene();
+    var FOG = new T.Color('#E6B48C');
+    scene.background = FOG;
+    scene.fog = new T.Fog(FOG, 300, 700);
+    var camera = new T.PerspectiveCamera(42, 1, 1, 4000);
+
+    /* ---------- lumière : fin d'après-midi ---------- */
+    scene.add(new T.HemisphereLight(0xffe4c4, 0x5a2a1a, 0.8));
+    var sun = new T.DirectionalLight(0xffcf9a, 2.4);
+    sun.position.set(-230, 150, 90);
+    sun.castShadow = true;
+    sun.shadow.mapSize.set(LITE ? 1024 : 2048, LITE ? 1024 : 2048);
+    var sc = sun.shadow.camera;
+    sc.left = -250; sc.right = 250; sc.top = 250; sc.bottom = -250; sc.near = 1; sc.far = 900;
+    sun.shadow.bias = -0.0005; sun.shadow.normalBias = 0.8;
+    scene.add(sun);
+
+    /* ---------- ciel ---------- */
+    var skyG = new T.SphereGeometry(2400, 32, 16);
+    var skyC = new Float32Array(skyG.attributes.position.count * 3);
+    var cH = new T.Color('#F2C49A'), cTop = new T.Color('#86A9C9'), tmpC = new T.Color();
+    for (var i = 0; i < skyG.attributes.position.count; i++) {
+      var yy = skyG.attributes.position.getY(i) / 2400;
+      if (yy <= 0) tmpC.copy(FOG); else tmpC.copy(cH).lerp(cTop, Math.pow(yy, 0.55));
+      skyC[i * 3] = tmpC.r; skyC[i * 3 + 1] = tmpC.g; skyC[i * 3 + 2] = tmpC.b;
+    }
+    skyG.setAttribute('color', new T.BufferAttribute(skyC, 3));
+    scene.add(new T.Mesh(skyG, new T.MeshBasicMaterial({ vertexColors: true, side: T.BackSide, fog: false, depthWrite: false })));
+    var sunDir = sun.position.clone().normalize();
+    var sunDisc = new T.Mesh(new T.SphereGeometry(55, 24, 12), new T.MeshBasicMaterial({ color: 0xfff1d8, fog: false }));
+    sunDisc.position.copy(sunDir).multiplyScalar(2200);
+    scene.add(sunDisc);
+    var gc = document.createElement('canvas'); gc.width = gc.height = 128;
+    var gx = gc.getContext('2d'), grd = gx.createRadialGradient(64, 64, 0, 64, 64, 64);
+    grd.addColorStop(0, 'rgba(255,236,200,0.9)'); grd.addColorStop(0.3, 'rgba(255,200,140,0.35)'); grd.addColorStop(1, 'rgba(255,180,120,0)');
+    gx.fillStyle = grd; gx.fillRect(0, 0, 128, 128);
+    var glow = new T.Sprite(new T.SpriteMaterial({ map: new T.CanvasTexture(gc), blending: T.AdditiveBlending, fog: false, depthWrite: false, transparent: true }));
+    glow.position.copy(sunDisc.position); glow.scale.set(900, 900, 1);
+    scene.add(glow);
+
+    /* ---------- fosse en gradins avec piste en spirale ---------- */
+    var PIT = { turns: 2, depth: 45, rTop: 140, rBot: 40, half: 6, floorE: 46 };
+    var TH = Math.PI * 2 * PIT.turns;
+    var STEP = (PIT.rTop - PIT.rBot) / PIT.turns - 2 * PIT.half;
+    var RISE = PIT.depth / PIT.turns;
+    function yRoad(th) { return -PIT.depth * th / TH; }
+    function rRoad(th) { return PIT.rTop - (PIT.rTop - PIT.rBot) * th / TH; }
+    function hills(x, z) {
+      return Math.sin(x * 0.011 + 0.5) * Math.cos(z * 0.013 - 1.1) * 7 + Math.sin(x * 0.027 + z * 0.019) * 2.5 + Math.cos(z * 0.041 - x * 0.012) * 1.3;
+    }
+    function pitInfo(x, z) {
+      var r = Math.sqrt(x * x + z * z);
+      var phi = Math.atan2(z, x); if (phi < 0) phi += Math.PI * 2;
+      var thMin = (PIT.rTop - r - PIT.half) * TH / (PIT.rTop - PIT.rBot);
+      var th = phi;
+      if (th < thMin) th = phi + Math.ceil((thMin - phi) / (Math.PI * 2)) * Math.PI * 2;
+      var yb, e, kb;
+      if (th > TH) { yb = -PIT.depth; e = PIT.floorE; kb = 3; } else { yb = yRoad(th); e = rRoad(th) + PIT.half; kb = 0; }
+      if (r <= e) return { h: yb, k: kb };
+      var thu = th - Math.PI * 2, yt, rt;
+      if (thu >= 0) { yt = yRoad(thu); rt = rRoad(thu) - PIT.half; } else { yt = 0; rt = e + STEP * (0 - yb) / RISE; }
+      if (rt <= e + 0.01) rt = e + 0.01;
+      var f = (r - e) / (rt - e);
+      if (f >= 1) {
+        var w = Math.min(1, Math.max(0, (r - 185) / 120));
+        var far = Math.max(0, r - 360) * 0.16 * (0.7 + 0.3 * Math.sin(phi * 5 + 1) + 0.2 * Math.sin(phi * 11));
+        return { h: w * hills(x, z) + far, k: 4 };
+      }
+      var s = f * 4, n = Math.floor(s), t = s - n;
+      var u = Math.min(1, Math.max(0, (t - 0.5) / 0.5)); u = u * u * (3 - 2 * u);
+      return { h: yb + (yt - yb) * (n + u) / 4, k: t < 0.5 ? 1 : 2 };
+    }
+
+    var SIZE = 1000, SEG = LITE ? 200 : 330;
+    var tg = new T.PlaneGeometry(SIZE, SIZE, SEG, SEG);
+    tg.rotateX(-Math.PI / 2);
+    var tp = tg.attributes.position, tcol = new Float32Array(tp.count * 3);
+    var cRoad = new T.Color('#5E3020'), cBench = new T.Color('#C9703F'), cFace = new T.Color('#8E3A22'),
+        cFloor = new T.Color('#7A3A24'), cSoil = new T.Color('#A9532E'), cG1 = new T.Color('#6B7A3A'), cG2 = new T.Color('#4F6130');
+    for (i = 0; i < tp.count; i++) {
+      var x = tp.getX(i), z = tp.getZ(i), p = pitInfo(x, z);
+      tp.setY(i, p.h);
+      var nz = (Math.sin(x * 0.31) * Math.cos(z * 0.27) + Math.sin(x * 0.07 + z * 0.05)) * 0.5;
+      if (p.k === 0) tmpC.copy(cRoad);
+      else if (p.k === 1) tmpC.copy(cBench);
+      else if (p.k === 2) tmpC.copy(cFace);
+      else if (p.k === 3) tmpC.copy(cFloor);
+      else {
+        var rr = Math.sqrt(x * x + z * z);
+        var g1 = Math.min(1, Math.max(0, (rr - 172) / 70));
+        var patch = 0.5 + 0.5 * Math.sin(x * 0.045 + 1.7) * Math.cos(z * 0.038 + 0.4);
+        tmpC.copy(cSoil).lerp(patch > 0.5 ? cG1 : cG2, g1 * (0.55 + 0.45 * patch));
+      }
+      tmpC.offsetHSL(0, 0, nz * 0.035 + (p.k < 4 ? p.h / 45 * 0.05 : 0));
+      tcol[i * 3] = tmpC.r; tcol[i * 3 + 1] = tmpC.g; tcol[i * 3 + 2] = tmpC.b;
+    }
+    tg.setAttribute('color', new T.BufferAttribute(tcol, 3));
+    tg.computeVertexNormals();
+    var terrain = new T.Mesh(tg, new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.96, metalness: 0, flatShading: true }));
+    terrain.receiveShadow = true; terrain.castShadow = true;
+    scene.add(terrain);
+
+    /* ---------- matériaux partagés ---------- */
+    var mAccent = new T.MeshStandardMaterial({ color: self.props.accent || '#F2B705', roughness: 0.5, metalness: 0.25 });
+    self._accentMat = mAccent;
+    var mDark = new T.MeshStandardMaterial({ color: 0x252525, roughness: 0.8, metalness: 0.2 });
+    var mTire = new T.MeshStandardMaterial({ color: 0x161616, roughness: 0.95 });
+    var mRim = new T.MeshStandardMaterial({ color: 0x9a9a9a, roughness: 0.35, metalness: 0.8 });
+    var mGlass = new T.MeshStandardMaterial({ color: 0x1d2a33, roughness: 0.1, metalness: 0.9 });
+    var mOre = new T.MeshStandardMaterial({ color: 0xB5532F, roughness: 1, flatShading: true });
+    var mBeacon = new T.MeshStandardMaterial({ color: 0xff6a00, emissive: 0xff6a00, emissiveIntensity: 2 });
+    var mLight = new T.MeshStandardMaterial({ color: 0xfff4d0, emissive: 0xfff0c0, emissiveIntensity: 1.6 });
+    var mMetal = new T.MeshStandardMaterial({ color: 0x8d949a, roughness: 0.55, metalness: 0.6 });
+    var mRoof = new T.MeshStandardMaterial({ color: 0x3F6E8F, roughness: 0.6, metalness: 0.3 });
+    var mWhite = new T.MeshStandardMaterial({ color: 0xDDD7CE, roughness: 0.85 });
+
+    function bx(par, w, h, d, m, x, y, z) {
+      var me = new T.Mesh(new T.BoxGeometry(w, h, d), m);
+      me.position.set(x, y, z); me.castShadow = true; me.receiveShadow = true;
+      par.add(me); return me;
+    }
+
+    /* ---------- camion-benne de mine ---------- */
+    var wheelG = new T.CylinderGeometry(1.5, 1.5, 1.0, 22); wheelG.rotateZ(Math.PI / 2);
+    var rimG = new T.CylinderGeometry(0.75, 0.75, 1.06, 12); rimG.rotateZ(Math.PI / 2);
+    function makeTruck() {
+      var g = new T.Group(), wheels = [];
+      bx(g, 4.0, 1.0, 9.6, mDark, 0, 1.9, 0);
+      bx(g, 5.6, 0.5, 1.6, mAccent, 0, 2.6, 4.3);
+      bx(g, 2.2, 2.1, 2.3, mAccent, -1.4, 3.9, 3.9);
+      bx(g, 2.0, 0.95, 0.1, mGlass, -1.4, 4.3, 5.07);
+      bx(g, 0.1, 0.95, 1.8, mGlass, -2.52, 4.3, 3.9);
+      bx(g, 1.8, 1.7, 1.8, mDark, 1.5, 3.4, 4.0);
+      bx(g, 1.4, 0.1, 0.1, mDark, 1.5, 3.2, 4.92);
+      bx(g, 0.6, 0.35, 0.12, mLight, -2.2, 2.6, 5.12);
+      bx(g, 0.6, 0.35, 0.12, mLight, 2.2, 2.6, 5.12);
+      var bed = new T.Group(); bed.position.set(0, 2.5, -4.7); g.add(bed);
+      bx(bed, 5.8, 0.45, 8.6, mAccent, 0, 0.25, 4.2);
+      bx(bed, 0.35, 2.6, 8.6, mAccent, -2.9, 1.5, 4.2);
+      bx(bed, 0.35, 2.6, 8.6, mAccent, 2.9, 1.5, 4.2);
+      bx(bed, 5.8, 3.0, 0.4, mAccent, 0, 1.7, 8.4);
+      bx(bed, 5.8, 0.3, 2.6, mAccent, 0, 3.15, 9.6);
+      bx(bed, 6.0, 0.25, 0.25, mDark, 0, 2.8, 0.15);
+      var bm = bx(bed, 0.5, 0.3, 0.5, mBeacon, -2.4, 3.45, 9.9);
+      var load = new T.Mesh(new T.DodecahedronGeometry(3, 1), mOre);
+      load.scale.set(0.9, 0.42, 1.35); load.position.set(0, 2.5, 4.1); load.castShadow = true;
+      bed.add(load);
+      var wp = [[-2.6, 3.6], [2.6, 3.6], [-1.85, -2.9], [-2.95, -2.9], [1.85, -2.9], [2.95, -2.9]];
+      for (var k = 0; k < wp.length; k++) {
+        var wg = new T.Group(); wg.position.set(wp[k][0], 1.5, wp[k][1]);
+        var tm = new T.Mesh(wheelG, mTire); tm.castShadow = true; wg.add(tm);
+        var rm = new T.Mesh(rimG, mRim); wg.add(rm);
+        var sp = new T.Mesh(new T.BoxGeometry(1.08, 0.25, 1.9), mDark); wg.add(sp);
+        g.add(wg); wheels.push(wg);
+      }
+      return { g: g, bed: bed, load: load, wheels: wheels, acc: 0 };
+    }
+
+    /* ---------- circuit des camions : descente, boucle en fond de fosse, remontée, boucle au concasseur ---------- */
+    function P(th, off) { var r = rRoad(th) + off; return new T.Vector3(r * Math.cos(th), yRoad(th) + 0.05, r * Math.sin(th)); }
+    var N = 140, pts = [], k;
+    for (k = 0; k <= N; k++) pts.push(P(TH * k / N, 2.8));
+    var bottomLoop = [[41, 10], [34, 19], [23, 21], [16, 14], [18, 6], [27, 4.5], [33.5, 2.5]];
+    for (k = 0; k < bottomLoop.length; k++) pts.push(new T.Vector3(bottomLoop[k][0], -PIT.depth + 0.05, bottomLoop[k][1]));
+    var upStart = pts.length;
+    for (k = N; k >= 0; k--) pts.push(P(TH * k / N, -2.8));
+    var topStart = pts.length;
+    var topLoop = [[136, -10], [140, -22], [152, -30], [166, -27], [171, -15], [161, -6], [149, -3]];
+    for (k = 0; k < topLoop.length; k++) pts.push(new T.Vector3(topLoop[k][0], 0.05, topLoop[k][1]));
+    var NP = pts.length;
+    var curve = new T.CatmullRomCurve3(pts, true, 'centripetal');
+    curve.arcLengthDivisions = 4000;
+    var L = curve.getLength();
+    var loadOn = N + 4, dumpA = topStart + 1, dumpB = topStart + 5;
+
+    var trucks = [], NT = Math.max(2, Math.min(12, self.props.trucks || 6));
+    for (i = 0; i < NT; i++) { var tk = makeTruck(); tk.u = i / NT; scene.add(tk.g); trucks.push(tk); }
+
+    /* ---------- pelleteuse hydraulique ---------- */
+    var exc = (function () {
+      var g = new T.Group();
+      bx(g, 2.3, 2.3, 10.5, mDark, -3.0, 1.15, 0);
+      bx(g, 2.3, 2.3, 10.5, mDark, 3.0, 1.15, 0);
+      bx(g, 4.2, 1.3, 6, mDark, 0, 1.7, 0);
+      var up = new T.Group(); up.position.y = 2.3; g.add(up);
+      bx(up, 6.6, 3.2, 7.8, mAccent, 0, 1.6, -0.6);
+      bx(up, 6.8, 2.6, 1.9, mDark, 0, 1.5, -5.1);
+      bx(up, 2.5, 2.7, 2.9, mAccent, -2.1, 4.5, 1.7);
+      bx(up, 2.2, 1.3, 0.12, mGlass, -2.1, 5.0, 3.17);
+      bx(up, 0.12, 1.3, 2.3, mGlass, -3.37, 5.0, 1.7);
+      bx(up, 0.5, 0.3, 0.5, mBeacon, -2.1, 6.0, 1.0);
+      var boom = new T.Group(); boom.position.set(0.9, 3.0, 2.8); up.add(boom);
+      bx(boom, 1.6, 1.7, 11.5, mAccent, 0, 0, 5.6);
+      bx(boom, 0.5, 0.5, 6, mRim, 0.0, -1.2, 3.0);
+      var stick = new T.Group(); stick.position.set(0, 0, 11.2); boom.add(stick);
+      bx(stick, 1.15, 1.15, 7.8, mAccent, 0, 0, 3.9);
+      var bucket = new T.Group(); bucket.position.set(0, 0, 7.8); stick.add(bucket);
+      bx(bucket, 3.6, 2.3, 2.5, mDark, 0, -0.6, 0.9);
+      bx(bucket, 3.6, 0.3, 0.5, mRim, 0, -1.8, 2.0);
+      var bl = new T.Mesh(new T.DodecahedronGeometry(1.5, 0), mOre);
+      bl.scale.set(1.1, 0.6, 0.8); bl.position.set(0, 0.6, 0.9); bucket.add(bl);
+      g.position.set(-2, -PIT.depth, 24);
+      g.rotation.y = Math.atan2(-1, 0.6);
+      scene.add(g);
+      return { g: g, up: up, boom: boom, stick: stick, bucket: bucket, load: bl };
+    })();
+    var KF = [[0, 0, 0.0, 1.7, 0.3], [2.5, 0, 0.06, 1.15, 1.3], [4, 0, -0.5, 1.05, 1.5], [6.2, 3.1, -0.6, 1.15, 1.5],
+              [7.4, 3.1, -0.55, 1.3, -0.4], [9.4, 0, -0.3, 1.6, 0.3], [10, 0, 0.0, 1.7, 0.3]];
+    function kf(t) {
+      t = t % 10;
+      for (var q = 0; q < KF.length - 1; q++) {
+        var a = KF[q], b = KF[q + 1];
+        if (t >= a[0] && t <= b[0]) {
+          var f = (t - a[0]) / (b[0] - a[0]); f = f * f * (3 - 2 * f);
+          return [a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f, a[3] + (b[3] - a[3]) * f, a[4] + (b[4] - a[4]) * f];
+        }
+      }
+      return [0, 0, 1.7, 0.3];
+    }
+
+    /* ---------- installations : concasseur, convoyeur, stock, bâtiments ---------- */
+    function hAt(x, z) { return pitInfo(x, z).h; }
+    var crusher = new T.Group(); crusher.position.set(186, 0, -40); crusher.rotation.y = 0.3; scene.add(crusher);
+    bx(crusher, 14, 12, 12, mMetal, 0, 6, 0);
+    bx(crusher, 15, 0.6, 13, mRoof, 0, 12.3, 0);
+    bx(crusher, 4, 18, 4, mWhite, -4, 9, -4);
+    var hop = new T.Mesh(new T.CylinderGeometry(7, 2.8, 6, 4, 1), mAccent);
+    hop.rotation.y = Math.PI / 4; hop.position.set(-9, 13, 6); hop.castShadow = true; crusher.add(hop);
+    for (k = 0; k < 4; k++) bx(crusher, 0.6, 10, 0.6, mDark, -9 + (k % 2 ? 3 : -3), 5, 6 + (k < 2 ? 3 : -3));
+    var cA = new T.Vector3(194, 11, -36), cB = new T.Vector3(240, 30, -14);
+    var conv = new T.Mesh(new T.BoxGeometry(2.4, 0.8, cA.distanceTo(cB)), mDark);
+    conv.position.copy(cA).add(cB).multiplyScalar(0.5); conv.lookAt(cB); conv.castShadow = true; scene.add(conv);
+    for (k = 1; k < 5; k++) {
+      var cp = cA.clone().lerp(cB, k / 5);
+      var leg = new T.Mesh(new T.CylinderGeometry(0.35, 0.35, cp.y, 6), mMetal);
+      leg.position.set(cp.x, cp.y / 2, cp.z); leg.castShadow = true; scene.add(leg);
+    }
+    var oreBits = [];
+    for (k = 0; k < 16; k++) {
+      var ob = new T.Mesh(new T.DodecahedronGeometry(0.7, 0), mOre); ob.castShadow = true; scene.add(ob); oreBits.push(ob);
+    }
+    var pileG = new T.ConeGeometry(28, 24, 28, 5);
+    var pp = pileG.attributes.position;
+    for (k = 0; k < pp.count; k++) {
+      if (pp.getY(k) < 11.9) {
+        var jx = Math.sin(k * 12.9898) * 1.6, jz = Math.cos(k * 78.233) * 1.6;
+        pp.setX(k, pp.getX(k) + jx); pp.setZ(k, pp.getZ(k) + jz);
+      }
+    }
+    pileG.computeVertexNormals();
+    var pile = new T.Mesh(pileG, mOre); pile.position.set(246, 12 + hAt(246, -14) - 1, -14);
+    pile.castShadow = pile.receiveShadow = true; scene.add(pile);
+    var pile2 = pile.clone(); pile2.scale.set(0.7, 0.6, 0.7); pile2.position.set(222, 7 + hAt(222, -52) - 1, -52); scene.add(pile2);
+    function shed(x, z, w, d, ry) {
+      var s = new T.Group(); s.position.set(x, hAt(x, z), z); s.rotation.y = ry; scene.add(s);
+      bx(s, w, 8, d, mWhite, 0, 4, 0); bx(s, w + 1, 0.6, d + 1, mRoof, 0, 8.3, 0);
+      bx(s, 4, 5, 0.2, mDark, 0, 2.5, d / 2 + 0.05);
+    }
+    shed(204, 32, 22, 12, -0.2); shed(232, 54, 16, 10, -0.4); shed(176, 52, 12, 9, 0.1);
+    for (k = 0; k < 3; k++) {
+      var tank = new T.Mesh(new T.CylinderGeometry(3, 3, 7, 18), mWhite);
+      tank.position.set(196 + k * 7.5, hAt(196 + k * 7.5, 66) + 3.5, 66); tank.castShadow = true; scene.add(tank);
+    }
+    var lamps = [0.5, 2.1, 3.7, 5.3];
+    for (k = 0; k < lamps.length; k++) {
+      var lx = Math.cos(lamps[k]) * 158, lz = Math.sin(lamps[k]) * 158;
+      var pole = new T.Mesh(new T.CylinderGeometry(0.4, 0.5, 20, 6), mMetal);
+      pole.position.set(lx, 10, lz); pole.castShadow = true; scene.add(pole);
+      var lb = bx(scene, 4, 2, 1, mLight, lx, 20.5, lz); lb.lookAt(0, 0, 0);
+    }
+
+    /* ---------- végétation ---------- */
+    var trunkG = new T.CylinderGeometry(0.5, 0.7, 4, 6); trunkG.translate(0, 2, 0);
+    var crownG = new T.IcosahedronGeometry(3.6, 0);
+    var NTREE = LITE ? 140 : 340;
+    var trunks = new T.InstancedMesh(trunkG, new T.MeshStandardMaterial({ color: 0x5a3d28, roughness: 1 }), NTREE);
+    var crowns = new T.InstancedMesh(crownG, new T.MeshStandardMaterial({ color: 0xffffff, roughness: 0.9, flatShading: true }), NTREE);
+    var m4 = new T.Matrix4(), qq = new T.Quaternion(), ss = new T.Vector3(), pv = new T.Vector3(), eu = new T.Euler();
+    var greens = [new T.Color('#52692F'), new T.Color('#3F5A28'), new T.Color('#6E7F38'), new T.Color('#5B6E2A')];
+    var placed = 0, guard = 0;
+    while (placed < NTREE && guard < 6000) {
+      guard++;
+      var ta = rnd() * Math.PI * 2, tr = 195 + rnd() * 300;
+      var tx = Math.cos(ta) * tr, tz = Math.sin(ta) * tr;
+      if (tx > 150 && tx < 285 && tz > -85 && tz < 85) continue;
+      var ty = hAt(tx, tz), tsc = 0.7 + rnd() * 1.0;
+      eu.set(0, rnd() * 6.28, 0); qq.setFromEuler(eu);
+      pv.set(tx, ty - 0.3, tz); ss.set(tsc, tsc, tsc); m4.compose(pv, qq, ss); trunks.setMatrixAt(placed, m4);
+      pv.set(tx, ty + 5.6 * tsc, tz); ss.set(tsc * 1.25, tsc * 0.85, tsc * 1.25); m4.compose(pv, qq, ss); crowns.setMatrixAt(placed, m4);
+      crowns.setColorAt(placed, greens[Math.floor(rnd() * greens.length)]);
+      placed++;
+    }
+    trunks.count = crowns.count = placed;
+    trunks.castShadow = crowns.castShadow = true;
+    scene.add(trunks); scene.add(crowns);
+
+    /* ---------- poussière (particules) ---------- */
+    var MAXP = LITE ? 600 : 1400;
+    var pPos = new Float32Array(MAXP * 3), pA = new Float32Array(MAXP), pS = new Float32Array(MAXP);
+    var pvx = new Float32Array(MAXP), pvy = new Float32Array(MAXP), pvz = new Float32Array(MAXP);
+    var plife = new Float32Array(MAXP), pmax = new Float32Array(MAXP), ps0 = new Float32Array(MAXP), pa0 = new Float32Array(MAXP);
+    var pg = new T.BufferGeometry();
+    pg.setAttribute('position', new T.BufferAttribute(pPos, 3));
+    pg.setAttribute('alpha', new T.BufferAttribute(pA, 1));
+    pg.setAttribute('size', new T.BufferAttribute(pS, 1));
+    var dustMat = new T.ShaderMaterial({
+      uniforms: { uColor: { value: new T.Color('#E3B08A') }, uScale: { value: 600 } },
+      vertexShader: 'attribute float alpha; attribute float size; varying float vA; uniform float uScale;' +
+        'void main(){ vA = alpha; vec4 mv = modelViewMatrix * vec4(position,1.0); gl_PointSize = size * uScale / max(1.0,-mv.z); gl_Position = projectionMatrix * mv; }',
+      fragmentShader: 'uniform vec3 uColor; varying float vA;' +
+        'void main(){ float d = length(gl_PointCoord - vec2(0.5)); if(d > 0.5) discard; gl_FragColor = vec4(uColor, vA * smoothstep(0.5, 0.0, d)); }',
+      transparent: true, depthWrite: false
+    });
+    var dust = new T.Points(pg, dustMat); dust.frustumCulled = false; scene.add(dust);
+    var pPtr = 0;
+    function emit(x, y, z, vx, vy, vz, size, life, a0) {
+      var j = pPtr; pPtr = (pPtr + 1) % MAXP;
+      pPos[j * 3] = x; pPos[j * 3 + 1] = y; pPos[j * 3 + 2] = z;
+      pvx[j] = vx; pvy[j] = vy; pvz[j] = vz; plife[j] = 0; pmax[j] = life; ps0[j] = size; pa0[j] = a0; pS[j] = size; pA[j] = 0;
+    }
+
+    /* ---------- tirs de mine ---------- */
+    var rocks = [];
+    for (k = 0; k < 40; k++) {
+      var rk = new T.Mesh(new T.DodecahedronGeometry(0.6 + rnd() * 0.8, 0), mOre);
+      rk.visible = false; rk.castShadow = true; scene.add(rk);
+      rocks.push({ m: rk, v: new T.Vector3(), alive: false });
+    }
+    var flash = new T.PointLight(0xffa040, 0, 220, 2); scene.add(flash);
+    var shake = 0, blastTimer = 7;
+    function blastAt() {
+      var th = 0.8 + rnd() * (TH - 2.6);
+      var r = rRoad(th) + PIT.half + 14;
+      var bxp = r * Math.cos(th), bzp = r * Math.sin(th), byp = hAt(bxp, bzp);
+      for (var q = 0; q < 190; q++) {
+        var ang = rnd() * 6.283, spd = rnd() * 11;
+        emit(bxp + (rnd() - 0.5) * 12, byp + 1, bzp + (rnd() - 0.5) * 12,
+             Math.cos(ang) * spd, 8 + rnd() * 24, Math.sin(ang) * spd, 9 + rnd() * 22, 3.5 + rnd() * 4, 0.6);
+      }
+      for (q = 0; q < rocks.length; q++) {
+        var ro = rocks[q], a2 = rnd() * 6.283, s2 = 4 + rnd() * 12;
+        ro.m.position.set(bxp, byp + 1.5, bzp);
+        ro.v.set(Math.cos(a2) * s2 - bxp * 0.04, 14 + rnd() * 16, Math.sin(a2) * s2 - bzp * 0.04);
+        ro.alive = true; ro.m.visible = true;
+      }
+      flash.position.set(bxp, byp + 8, bzp); flash.intensity = 9;
+      shake = 1.6; blastTimer = 15 + rnd() * 8;
+    }
+
+    /* ---------- boucle d'animation ---------- */
+    var clock = new T.Clock(), tt = 0, lw = 0, lh = 0, excPrev = 0;
+    var vA = new T.Vector3(), vB = new T.Vector3(), vC = new T.Vector3(), vD = new T.Vector3();
+    var camPos = new T.Vector3(), camLook = new T.Vector3(0, -24, 0), first = true;
+    function resize() {
+      var w = canvas.clientWidth | 0, h = canvas.clientHeight | 0;
+      if (w && h && (w !== lw || h !== lh)) {
+        lw = w; lh = h; R.setSize(w, h, false);
+        camera.aspect = w / h; camera.fov = w < 700 ? 58 : 42; camera.updateProjectionMatrix();
+        dustMat.uniforms.uScale.value = h * PR / (2 * Math.tan(camera.fov * Math.PI / 360));
+      }
+    }
+    function frame() {
+      if (!self._alive) return;
+      self._raf = requestAnimationFrame(frame);
+      if (!self.visible) { clock.getDelta(); return; }
+      var dtr = Math.min(clock.getDelta(), 0.05);
+      var an = self.props.animated;
+      var animated = (an === undefined || an === null ? true : !!an) && !reduce;
+      var dt = animated ? dtr : 0;
+      tt += dt;
+      resize();
+
+      var blinkOn = (tt * 2) % 1 < 0.5;
+      mBeacon.emissiveIntensity = blinkOn ? 3 : 0.15;
+
+      /* camions */
+      for (var a = 0; a < trucks.length; a++) {
+        var tk = trucks[a];
+        tk.u = (tk.u + 15 * dt / L) % 1;
+        curve.getPointAt(tk.u, vA);
+        curve.getPointAt((tk.u + 4 / L) % 1, vB);
+        tk.g.position.copy(vA); tk.g.lookAt(vB);
+        for (var w2 = 0; w2 < tk.wheels.length; w2++) tk.wheels[w2].rotation.x += 15 * dt / 1.5;
+        var idx = curve.getUtoTmapping(tk.u) * NP;
+        tk.load.visible = idx >= loadOn && idx < (dumpA + dumpB) / 2;
+        var tilt = 0;
+        if (idx >= dumpA && idx <= dumpB) tilt = Math.sin(Math.PI * (idx - dumpA) / (dumpB - dumpA));
+        tk.bed.rotation.x = -0.8 * tilt;
+        if (dt > 0) {
+          tk.acc += dt * 12;
+          while (tk.acc > 1) {
+            tk.acc -= 1;
+            tk.g.localToWorld(vC.set(rnd() < 0.5 ? -2.7 : 2.7, 0.6, -4.6));
+            emit(vC.x, vC.y, vC.z, (rnd() - 0.5) * 1.6 + 0.4, 0.5 + rnd() * 1.2, (rnd() - 0.5) * 1.6, 3 + rnd() * 3, 2 + rnd() * 1.6, 0.3);
+          }
+          if (tilt > 0.5 && rnd() < 0.6) {
+            tk.g.localToWorld(vC.set((rnd() - 0.5) * 4, 1.5, -6.5));
+            emit(vC.x, vC.y, vC.z, (rnd() - 0.5) * 3, 1 + rnd() * 3, (rnd() - 0.5) * 3, 5 + rnd() * 5, 2.5 + rnd() * 1.5, 0.45);
+          }
+        }
+      }
+
+      /* pelleteuse */
+      var et = (tt * 0.9) % 10, kv = kf(et);
+      exc.up.rotation.y = kv[0]; exc.boom.rotation.x = kv[1]; exc.stick.rotation.x = kv[2]; exc.bucket.rotation.x = kv[3];
+      exc.load.visible = et > 2.5 && et < 7.4;
+      if (dt > 0 && ((excPrev < 2.3 && et >= 2.3) || (excPrev < 7.3 && et >= 7.3))) {
+        exc.bucket.getWorldPosition(vD);
+        for (var q2 = 0; q2 < 24; q2++) emit(vD.x + (rnd() - 0.5) * 3, vD.y - 1, vD.z + (rnd() - 0.5) * 3, (rnd() - 0.5) * 4, rnd() * 3, (rnd() - 0.5) * 4, 5 + rnd() * 6, 2.5 + rnd() * 2, 0.5);
+      }
+      excPrev = et;
+
+      /* convoyeur */
+      for (var o = 0; o < oreBits.length; o++) {
+        var f = ((tt * 0.12) + o / oreBits.length) % 1;
+        oreBits[o].position.copy(cA).lerp(cB, f); oreBits[o].position.y += 0.9;
+        oreBits[o].rotation.y = o;
+      }
+
+      /* tirs */
+      blastTimer -= dt;
+      flash.intensity = Math.max(0, flash.intensity - dtr * 18);
+      for (var rq = 0; rq < rocks.length; rq++) {
+        var ro = rocks[rq];
+        if (!ro.alive) continue;
+        ro.v.y -= 30 * dt;
+        ro.m.position.addScaledVector(ro.v, dt);
+        ro.m.rotation.x += dt * 4; ro.m.rotation.z += dt * 3;
+        if (ro.v.y < 0 && ro.m.position.y < hAt(ro.m.position.x, ro.m.position.z)) { ro.alive = false; ro.m.visible = false; }
+      }
+
+      /* particules */
+      if (dt > 0) {
+        var drag = Math.exp(-1.3 * dt);
+        for (var pi = 0; pi < MAXP; pi++) {
+          if (pmax[pi] <= 0) { pA[pi] = 0; continue; }
+          plife[pi] += dt;
+          if (plife[pi] >= pmax[pi]) { pmax[pi] = 0; pA[pi] = 0; continue; }
+          pvx[pi] = pvx[pi] * drag + 0.5 * dt; pvy[pi] = pvy[pi] * drag + 0.7 * dt; pvz[pi] *= drag;
+          pPos[pi * 3] += pvx[pi] * dt; pPos[pi * 3 + 1] += pvy[pi] * dt; pPos[pi * 3 + 2] += pvz[pi] * dt;
+          var lf = plife[pi] / pmax[pi];
+          pA[pi] = pa0[pi] * (1 - lf) * (1 - lf) * Math.min(1, plife[pi] * 4);
+          pS[pi] = ps0[pi] * (1 + lf * 1.8);
+        }
+        pg.attributes.position.needsUpdate = true;
+        pg.attributes.alpha.needsUpdate = true;
+        pg.attributes.size.needsUpdate = true;
+      }
+
+      /* caméra */
+      var mode = (self.state && self.state.cam) || 'orbit';
+      var tPos = vC, tLook = vD;
+      if (mode === 'follow') {
+        var ft = trucks[0].g;
+        ft.localToWorld(tPos.set(7, 11, -26));
+        ft.localToWorld(tLook.set(0, 3, 14));
+        var minY = hAt(tPos.x, tPos.z) + 4;
+        if (tPos.y < minY) tPos.y = minY;
+      } else {
+        var ang2 = 0.6 + tt * 0.035, rad = lw < 700 ? 300 : 255;
+        tPos.set(Math.cos(ang2) * rad, 125 + Math.sin(tt * 0.1) * 12, Math.sin(ang2) * rad);
+        tLook.set(0, -24, 0);
+      }
+      if (first) { camPos.copy(tPos); camLook.copy(tLook); first = false; }
+      var kk = 1 - Math.exp(-dtr * (mode === 'follow' ? 3 : 1.6));
+      camPos.lerp(tPos, kk); camLook.lerp(tLook, kk);
+      camera.position.copy(camPos);
+      if (shake > 0) {
+        camera.position.x += (Math.random() - 0.5) * shake * 2;
+        camera.position.y += (Math.random() - 0.5) * shake * 2;
+        shake = Math.max(0, shake - dtr * 1.3);
+      }
+      camera.lookAt(camLook);
+      R.render(scene, camera);
+    }
+    frame();
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  var canvas = document.getElementById('mine3d');
+  if (!window.THREE || !webglOK()) { document.getElementById('controls').style.display = 'none'; return; }
+  /* pause du rendu quand la scène n'est pas visible (économie batterie) */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { SITE.visible = e[0].isIntersecting && !document.hidden; }).observe(canvas);
+  }
+  document.addEventListener('visibilitychange', function () { SITE.visible = !document.hidden; });
+  try { startMine(canvas); } catch (err) { console.error(err); document.getElementById('controls').style.display = 'none'; }
+});
+</script>
+</body>
+</html>
