@@ -1,16 +1,73 @@
-# Site vitrine — mise en ligne et mises à jour
+# Groupe AOS — site vitrine (en construction)
+
+« De la Guinée au monde, nous éclairons l'avenir. »
+
+Page unique avec une scène 3D temps réel qui raconte la chaîne de valeur du groupe :
+mine de bauxite → transport routier → navires (barges, grue flottante, vraquier) →
+soutage → hydrocarbures (plateforme offshore), puis la nuit tombe et toute la chaîne
+s'illumine jusqu'aux routes maritimes « vers le monde ».
 
 ## Fichiers
-- `index.html` : la page (textes, couleurs, scène 3D)
-- `three.min.js` : moteur 3D (ne pas modifier)
 
-## Modifier les textes
-Ouvrir `index.html` et remplacer les zones entre crochets :
-`[NOM DE L'ENTREPRISE]`, `[VILLE, PAYS]`, `[EMAIL]`, `[TÉLÉPHONE]`, la phrase d'activité,
-ainsi que `mailto:contact@exemple.com` et `tel:+000000000`.
-Couleur des engins et nombre de camions : `var CONFIG = { accent: '#F2B705', trucks: 6 };`
+| Fichier | Rôle |
+| --- | --- |
+| `index.html` | Structure et **tous les textes** de la page |
+| `css/style.css` | Mise en forme (palette du logo : verts AOS, or, ambre de la goutte, crème du panneau) |
+| `js/site.js` | Interface : introduction, défilement ↔ caméra 3D, cartes, rail lumineux |
+| `js/3d/core.js` | Moteur : ciel physique, brume, shaders (terrain, eau), post-traitement HDR |
+| `js/3d/world.js` | Relief, pistes, eau, végétation, port, villages |
+| `js/3d/machines.js` | Engins, navires, plateforme (modèles procéduraux, aucun fichier 3D) |
+| `js/3d/director.js` | Mise en scène : circulation, caméras, jour/nuit, éclairages, boucle de rendu |
+| `three.min.js` | Moteur Three.js r149 (ne pas modifier) |
+| `img/logo-aos-removebg-preview.png` | Logo couleur sans fond (utilisé sur fond clair : section contact) |
+| `img/logo-aos-blanc.png` | Logo blanc avec goutte dorée (en-tête, intro, pied de page — fonds sombres) |
+| `img/logo-aos.jpg` | Logo sur fond blanc (fichier source, disponible pour d'autres usages) |
+| `img/og-groupe-aos.jpg` | Image de partage 1200×630 (aperçu WhatsApp, LinkedIn, Facebook…) générée depuis la scène 3D |
 
-## Options d'URL (test)
-- `?lite` : force la version allégée
-- `?full` : force la version complète (ombres, plus d'arbres et de camions)
-La version allégée s'active seule sur mobile et appareils modestes.
+`img/logo-aos-blanc.png` a été dérivé du logo sans fond. Si une version blanche officielle
+existe, il suffit de la déposer sous le même nom.
+
+## Coordonnées et domaine
+
+Renseignés dans `index.html` :
+- section « Contact » : Conakry (Guinée), `contact@groupe-aos.com`, `+224 623 23 55 02`
+  (liens `mailto:` et `tel:` cliquables) ;
+- en-tête : `canonical` et `og:url` → `https://www.groupe-aos.com/`, image de partage
+  `og:image` / `twitter:image` → `https://www.groupe-aos.com/img/og-groupe-aos.jpg` ;
+- données structurées `Organization` (JSON-LD, lues par Google) avec les mêmes coordonnées.
+
+En cas de changement de coordonnées ou de domaine, mettre à jour ces trois endroits.
+
+Les intitulés des cinq activités (FR / EN / 中文) reprennent le panneau « Énergie, mines et
+logistique ». Les phrases de description sous chaque activité sont des propositions à faire
+valider par le client.
+
+## Mise en ligne
+
+Site 100 % statique : déposer tout le dossier à la racine de `https://www.groupe-aos.com/`
+sur n'importe quel hébergement (Netlify, Vercel, OVH, serveur Apache/Nginx…). La police
+« Outfit » est chargée depuis Google Fonts. La page s'ouvre aussi directement en local
+(double-clic sur `index.html`).
+
+L'aperçu des liens partagés (WhatsApp, LinkedIn, Facebook…) n'apparaîtra qu'une fois le site
+en ligne, puisque l'image est référencée par son adresse sur le domaine.
+
+## Qualité 3D et compatibilité
+
+La qualité s'adapte seule à l'appareil (ordinateur puissant, portable, mobile) et la résolution
+de rendu s'ajuste en continu pour rester fluide. Options d'URL pour tester :
+
+- `?full` : force la qualité maximale
+- `?medium` : force la qualité intermédiaire
+- `?lite` : force la version allégée (mobile)
+- `?no3d` : affiche la version sans 3D (fond illustré), utilisée automatiquement si WebGL est indisponible
+
+Le rendu se met en pause quand l'onglet est masqué ou quand la section contact couvre l'écran.
+Les préférences « animations réduites » du système sont respectées.
+
+## Repères pour les retouches
+
+- Hauteur du soleil selon l'étape du récit : tableau `ELEV` dans `js/3d/director.js`.
+- Cadrage de chaque activité : fonction `station()` dans `js/3d/director.js`
+  (0 = accueil, 1 = mines, 2 = transport, 3 = navires, 4 = soutage, 5 = hydrocarbures, 6-7 = final).
+- Nombre de camions : `haul` (tombereaux) et `road` (camions routiers) dans `PRESETS`.
