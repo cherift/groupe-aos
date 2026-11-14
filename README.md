@@ -31,7 +31,7 @@ existe, il suffit de la déposer sous le même nom.
 ## Coordonnées et domaine
 
 Renseignés dans `index.html` :
-- section « Contact » : Conakry (Guinée), `contact@groupe-aos.com`, `+224 623 23 55 02`
+- section « Contact » : Conakry (Guinée), `office@groupe-aos.com`, `+224 623 23 55 02`
   (liens `mailto:` et `tel:` cliquables) ;
 - en-tête : `canonical` et `og:url` → `https://www.groupe-aos.com/`, image de partage
   `og:image` / `twitter:image` → `https://www.groupe-aos.com/img/og-groupe-aos.jpg` ;
