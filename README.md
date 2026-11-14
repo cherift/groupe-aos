@@ -22,7 +22,8 @@ s'illumine jusqu'aux routes maritimes « vers le monde ».
 | `img/logo-aos-removebg-preview.png` | Logo couleur sans fond (utilisé sur fond clair : section contact) |
 | `img/logo-aos-blanc.png` | Logo blanc avec goutte dorée (en-tête, intro, pied de page — fonds sombres) |
 | `img/logo-aos.jpg` | Logo sur fond blanc (fichier source, disponible pour d'autres usages) |
-| `img/og-groupe-aos.jpg` | Image de partage 1200×630 (aperçu WhatsApp, LinkedIn, Facebook…) générée depuis la scène 3D |
+| `img/og-groupe-aos.jpg` | Image d'aperçu des liens partagés, 1200×630 : logo, « GROUPE AOS » et slogan |
+| `img/icon-aos-180.png` | Icône carrée (raccourci sur l'écran d'accueil iPhone / iPad) |
 
 `img/logo-aos-blanc.png` a été dérivé du logo sans fond. Si une version blanche officielle
 existe, il suffit de la déposer sous le même nom.
@@ -49,8 +50,28 @@ sur n'importe quel hébergement (Netlify, Vercel, OVH, serveur Apache/Nginx…).
 « Outfit » est chargée depuis Google Fonts. La page s'ouvre aussi directement en local
 (double-clic sur `index.html`).
 
-L'aperçu des liens partagés (WhatsApp, LinkedIn, Facebook…) n'apparaîtra qu'une fois le site
-en ligne, puisque l'image est référencée par son adresse sur le domaine.
+## Aperçu des liens partagés
+
+Quand on partage `https://www.groupe-aos.com/` dans WhatsApp, Facebook, Messenger, LinkedIn,
+X, Telegram ou les messages privés Instagram, la carte d'aperçu affiche :
+- l'image `img/og-groupe-aos.jpg` (logo, « GROUPE AOS », slogan) — composée pour rester
+  lisible même recadrée en carré, comme le fait WhatsApp pour les petites vignettes ;
+- le titre « Groupe AOS » ;
+- la description qui commence par le slogan.
+
+Ces informations viennent des balises `og:*` et `twitter:*` de `index.html`.
+
+- L'aperçu n'apparaît qu'une fois le site en ligne sur le domaine (les applications vont
+  chercher l'image à son adresse publique).
+- Instagram n'affiche pas d'aperçu dans les publications ni dans la bio (les liens n'y sont
+  pas des cartes) : seulement dans les messages privés.
+- Les applications gardent les aperçus en cache. Après une modification, rafraîchir avec le
+  [débogueur de partage Facebook](https://developers.facebook.com/tools/debug/) (Facebook,
+  Messenger) et le [Post Inspector LinkedIn](https://www.linkedin.com/post-inspector/). Pour
+  WhatsApp, un lien déjà partagé peut garder l'ancien aperçu : partager
+  `https://www.groupe-aos.com/?v=2` force une nouvelle lecture.
+- Pour changer l'image, remplacer le fichier par une autre image 1200×630 de moins de 300 Ko
+  (au-delà, WhatsApp peut ne pas l'afficher).
 
 ## Qualité 3D et compatibilité
 
